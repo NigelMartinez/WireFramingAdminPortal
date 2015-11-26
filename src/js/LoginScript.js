@@ -56,7 +56,7 @@ function login() {
 		var msg = document.getElementById("error-message");
 			
 		if(type == 0) {
-			document.cookie = "username=" + username;
+			sessionStorage.setItem("username", username);
 			window.location.replace("index.html");
 			msg.innerHTML = "";
 			msg.parentNode.classList.remove("bg-danger");

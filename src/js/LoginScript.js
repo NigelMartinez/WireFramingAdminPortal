@@ -18,7 +18,7 @@ function login() {
 	var password = $("#password").val();
 		
 	var userTable;
-	var type = 100;
+	var type;
 	var userDB;
 	var pwdDB;
 
@@ -50,11 +50,13 @@ function login() {
 			
 		//Clear out form.
 		var clearText = document.getElementById("password");
+		clearText.focus();
 		clearText.value = "";
 		//Get message element.
 		var msg = document.getElementById("error-message");
 			
 		if(type == 0) {
+			document.cookie = "username=" + username;
 			window.location.replace("index.html");
 			msg.innerHTML = "";
 			msg.parentNode.classList.remove("bg-danger");
@@ -64,7 +66,7 @@ function login() {
 			msg.classList.add("bg-danger");
 		}
 		else {
-			msg.innerHTML = "Incorrect Username and/or Password.";
+			msg.innerHTML = "Incorrect username or password.";
 			msg.classList.add("bg-danger");
 		}
 	});

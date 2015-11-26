@@ -10,6 +10,11 @@
 	<!--Favicon-->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -47,43 +52,36 @@
 		</div>
 
 		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-9">
+			<div class="col-md-4"></div>
+			<div class="col-md-8" style="text-align:left">
 				<h2><br><br>Login</h2>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-1">
-				<div style="color:black; font-size:16px">Username:</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form role="form" id="login-form">
+					<div class="form-group">
+						<label for="username">Username:</label>
+						<input type="text" class="form-control" id="username" required autofocus>
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="password" required>
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-warning" id="submit">Submit</button>
+					</div>
+				</form>
 			</div>
-			<div class="col-md-8">
-				<textarea rows="1" cols="50" id="username"></textarea>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-1">
-				<div style="color:black; font-size:16px">Password:</div>
-			</div>
-			<div class="col-md-8">
-				<textarea rows="1" cols="50" id="password"></textarea>
-			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-3"></div>
 			<div class="col-md-5">
 				<label id="error-message"></label>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-7">
-				<button type="submit" class="btn btn-warning"><a id="submit-button-href" href="#">Submit</a></button>
 			</div>
 		</div>
 

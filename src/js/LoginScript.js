@@ -1,20 +1,26 @@
 window.onload = function () {
-	document.getElementById("submit-button-href").parentNode.addEventListener("click", function() {
-		var nameTextBox = document.getElementById("username");
-		console.log(username.value);
-		var nameTextBox = document.getElementById("password");
-		console.log(password.value);
-		
-		var errorLabel = document.getElementById("error-message");
-		if(nameTextBox.value != "USERNAME" && nameTextBox.value != "PASSWORD") {
-			console.log("Admins sucks at logging in.");
-			errorLabel.innerHTML = "Incorrect username and/or password.";
-			console.log(errorLabel.parentNode);
-			errorLabel.parentNode.classList.add("bg-danger");
-		} else {
-			errorLabel.innerHTML = "";
-			errorLabel.parentNode.classList.remove("bg-danger");
-			window.location.replace("index.html");
-		}
+	$("#login-form").submit(function(){
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var userTable;
+
+		$.ajax ({
+			type: 'GET',
+			url: 'http://131.104.49.63/api/participants',
+			dataType : 'json',
+			xhrFields: {
+				withCredentials: true
+		  	},
+			error : function(a, b, c){
+				console.log("Failed");
+			  	console.log(a);
+			  	console.log(b);
+			  	console.log(c);
+		  	},
+			success: function(data) {
+				console.log(data);
+			}
+		});
+
 	});
-}
+};

@@ -16,7 +16,6 @@ window.onload = function () {
 		/* Get which radio button is checked */
 		var radioButtons = document.getElementById("team-type");
 
-
 		if(nameTextBox.value == "") {
 			errorLabel.innerHTML = "Please enter the team name";
 			errorLabel.parentNode.classList.add("bg-danger");
@@ -145,20 +144,12 @@ window.onload = function () {
 							participantTable[i].teamId = teamID;
 						} else {
 							for(var j = 0; j < emails.length; j++) {
-
-								console.log(i);
-								console.log(j);
-								console.log(emails[j].value);
-								console.log(participantTable[i].email);
-
 								if(emails[j].value == participantTable[i].email) {
-									console.log("Same!");
 									participantTable[i].teamId = teamID;
 								}
 							}
 						}
 					};
-					console.log(participantTable);
 					updateParticipants(0);
 				});
 			});

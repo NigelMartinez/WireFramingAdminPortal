@@ -66,6 +66,7 @@ window.onload = function () {
 	});
 
 	document.getElementById("submit-button").addEventListener("click", function() {
+		var success = false;
 		var name = document.getElementById("route-name");
 		var maxParticipant = document.getElementById("num-participants");
 		var checkboxes = document.getElementsByTagName("input");
@@ -120,6 +121,7 @@ window.onload = function () {
 		}
 
 		if(document.getElementsByClassName("bg-danger").length == 0) {
+			success = true;
 			window.location.replace("index.html");
 		}
 
@@ -130,6 +132,10 @@ window.onload = function () {
 		} else {
 			noWaypoints.classList.remove("bg-danger");
 			noWaypoints.innerHTML = "";
+		}
+		
+		if(success) {	
+			alert(name.value + " created.");
 		}
 	});
 

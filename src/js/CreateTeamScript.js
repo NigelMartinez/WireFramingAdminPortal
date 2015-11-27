@@ -153,6 +153,7 @@ window.onload = function () {
 					updateParticipants(0);
 				});
 			});
+			alert(nameTextBox.value + " created.");
 		});
 	});
 }; /*79 Roehampton Crescent*/

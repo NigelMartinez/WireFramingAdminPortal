@@ -35,9 +35,19 @@
 					<h1> Administrator Portal </h1>
 				</div>
 				<div class="col-md-4" style="text-align:right">
-					<h3 style="margin-right:10px">Logged in as<br>USERNAME</h3>
+					<h3 style="margin-right:10px" id="user-header">Logged in as<br>USERNAME</h3>
 				</div>
 			</div>
+			
+			<script language="javascript" type="text/javascript">
+				var username = sessionStorage.getItem("username");
+				var userHeader = document.getElementById("user-header");
+				
+				if(username == null) {
+					window.location.replace("forbidden.html");
+				}
+				userHeader.innerHTML = "Logged in as<br>" + username;
+			</script>
 
 			<div class="row">
 				<div class="col-md-10"></div>

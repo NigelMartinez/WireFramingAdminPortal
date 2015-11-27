@@ -1,20 +1,73 @@
 window.onload = function () {
-	document.getElementById("submit-button-href").parentNode.addEventListener("click", function() {
-		var nameTextBox = document.getElementById("username");
-		console.log(username.value);
-		var nameTextBox = document.getElementById("password");
-		console.log(password.value);
+	$("#submit").click(function(){
+		login();
+	});
+	
+	$(document).bind('keypress', pressed);
+	
+};
+
+function pressed(e) {
+    if(e.keyCode === 13) {
+        login();
+    }
+}
+	
+function login() {
+	var username = $("#username").val();
+	var password = $("#password").val();
 		
-		var errorLabel = document.getElementById("error-message");
-		if(nameTextBox.value != "USERNAME" && nameTextBox.value != "PASSWORD") {
-			console.log("Admins sucks at logging in.");
-			errorLabel.innerHTML = "Incorrect username and/or password.";
-			console.log(errorLabel.parentNode);
-			errorLabel.parentNode.classList.add("bg-danger");
-		} else {
-			errorLabel.innerHTML = "";
-			errorLabel.parentNode.classList.remove("bg-danger");
+	var userTable;
+	var type;
+	var userDB;
+	var pwdDB;
+
+	$.ajax ({
+		type: 'GET',
+		url: 'http://131.104.49.63/api/participants',
+		dataType: 'json',
+		xhrFields: {
+			withCredentials: true
+		},
+		error: function(a, b, c){
+			console.log(a);
+			console.log(b);
+			console.log(c);
+		},
+		success: function(data) {
+			userTable = data;
+		}
+	}).then(function() {
+		for (var i = 0; i < userTable.length; i++){
+			userDB = userTable[i].username;
+			pwdDB = userTable[i].password;
+			
+			if(username.toUpperCase() == userDB.toUpperCase() && password == pwdDB) {
+				type = userTable[i].type;
+				break;
+			}
+		}
+			
+		//Clear out form.
+		var clearText = document.getElementById("password");
+		clearText.focus();
+		clearText.value = "";
+		//Get message element.
+		var msg = document.getElementById("error-message");
+			
+		if(type == 0) {
+			sessionStorage.setItem("username", username);
 			window.location.replace("index.html");
+			msg.innerHTML = "";
+			msg.parentNode.classList.remove("bg-danger");
+		}
+		else if(type == 1 || type == 2) {
+			msg.innerHTML = "Sorry, you do not have access.";
+			msg.classList.add("bg-danger");
+		}
+		else {
+			msg.innerHTML = "Incorrect username or password.";
+			msg.classList.add("bg-danger");
 		}
 	});
 }

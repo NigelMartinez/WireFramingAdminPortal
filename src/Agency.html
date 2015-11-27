@@ -14,7 +14,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/LajosTest.css" rel="stylesheet">
-	<script language="javascript" type="text/javascript" src="js/FAQScript.js"></script>
+	<script language="javascript" type="text/javascript" src="js/EditAgency.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,9 +34,19 @@
 					<h1> Administrator Portal </h1>
 				</div>
 				<div class="col-md-4" style="text-align:right">
-					<h3 style="margin-right:10px">Logged in as<br>USERNAME</h3>
+					<h3 style="margin-right:10px" id="user-header">Logged in as<br>USERNAME</h3>
 				</div>
 			</div>
+			
+			<script language="javascript" type="text/javascript">
+				var username = sessionStorage.getItem("username");
+				var userHeader = document.getElementById("user-header");
+				
+				if(username == null) {
+					window.location.replace("forbidden.html");
+				}
+				userHeader.innerHTML = "Logged in as<br>" + username;
+			</script>
 
 			<div class="row">
 				<div class="col-md-10"></div>
@@ -85,32 +95,32 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
+			<div class="col-md-12 toggle-edit" id="agency-1" contenteditable="false">
 				<h4>Agency 1</h4>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
+			<div class="col-md-12 toggle-edit" id="info-1" contenteditable="false">
 				Info About Agency 1.
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
+			<div class="col-md-12 toggle-edit" id="agency-2" contenteditable="false">
 				<h4>Agency 2</h4>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
+			<div class="col-md-12 toggle-edit" id="info-2" contenteditable="false">
 				Info About Agency 2
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
+			<div class="col-md-12 toggle-edit" id="agency-3" contenteditable="false">
 				<h4>Agency 3</h4>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 toggle-edit" contenteditable="false">
+			<div class="col-md-12 toggle-edit" id="info-3" contenteditable="false">
 				Info About Agency 3
 			</div>
 		</div>

@@ -10,6 +10,11 @@
 	<!--Favicon-->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,53 +50,75 @@
 				<div class="col-md-1" id="header-link"><a href="login404.html">Exit Portal</a></div>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-9">
-				<h2><br><br>Login</h2>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-1">
-				<div style="color:black; font-size:16px">Username:</div>
-			</div>
-			<div class="col-md-8">
-				<textarea rows="1" cols="50" id="username"></textarea>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-1">
-				<div style="color:black; font-size:16px">Password:</div>
-			</div>
-			<div class="col-md-8">
-				<textarea rows="1" cols="50" id="password"></textarea>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-5">
-				<label id="error-message"></label>
+		
+		<div id="menu">
+			<div class="row">
+				<div class="col-md-1">
+					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div style="font-size:20px">Routes</div>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="login.html">Add Routes</a></li>
+						<li><a href="login.html">Edit Routes</a></li>
+						<li><a href="login.html">Delete Routes</a></li>
+					</ul>
+				</div>
+				<div class="col-md-1">
+					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div style="font-size:20px">Teams</div>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="login.html">Create Team</a></li>
+						<li><a href="login.html">Edit Team</a></li>
+						<li><a href="login.html">Delete Team</a></li>
+					</ul>
+				</div>
+				<div class="col-md-1">
+					<button class="btn btn-default dropdown-toggle menu-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div style="font-size:20px">Pages</div>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="login.html">FAQ</a></li>
+						<li><a href="login.html">Agency List</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-4"></div>
-			<div class="col-md-7">
-				<button type="submit" class="btn btn-warning"><a id="submit-button-href" href="#">Submit</a></button>
+			<div class="col-md-8" style="text-align:left">
+				<h2><br><br>Login</h2>
 			</div>
 		</div>
 
-	</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form role="form" id="login-form" onsubmit="check()">
+					<div class="form-group">
+						<label for="username">Username:</label>
+						<input type="text" class="form-control" id="username" autofocus>
+					</div>
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input type="password" class="form-control" id="password">
+					</div>
+				</form>
+				<button type="submit" class="btn btn-warning" id="submit">Submit</button>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<br><br>
+				<label id="error-message" style="padding-left:8px; padding-right:8px"></label>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
   </body>
 </html>

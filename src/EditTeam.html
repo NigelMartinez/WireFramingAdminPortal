@@ -94,23 +94,11 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						<p class="bg-info teams" id="TeamOne"><button class="btn btn-warning delete-team">Delete?</button>Food Fighters</p>
+					<div class="col-md-10">
+						<p class="bg-info teams" id="TeamOne"></p>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<p class="bg-warning teams" id="TeamTwo">United Food Security</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<p class="bg-info teams" id="TeamThree">FoodFTW</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<p class="bg-warning teams" id="TeamFour">Thunder Cats</p>
+					<div class="col-md-2">
+					    <button class="btn btn-secondary delete-team">Delete</button>
 					</div>
 				</div>
 			</div>
@@ -126,7 +114,7 @@
 				Team Name:
 			</div>
 			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="team-name">Food Fighters</textarea>
+				<textarea rows="1" cols="50" id="team-name"></textarea>
 			</div>
 		</div>
 		<div class="row">
@@ -146,107 +134,32 @@
 				<div id="invite-members">Current Team Members</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox1">Lorant@gmail.com</textarea>
-			</div>
-			<div class="col-md-4">
-				<form id="team-type">
-					<button class="delete-button">Remove?</button>
-				</form>
-			</div>
+		<div id="current-team-members">
 		</div>
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox2">Lajos@gmail.com</textarea>
-			</div>
-			<div class="col-md-4">
-				<form id="team-type">
-					<button class="delete-button">Remove?</button>
-				</form>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox3">Christian@gmail.com</textarea>
-			</div>
-			<div class="col-md-4">
-				<form id="team-type">
-					<button class="delete-button">Remove?</button>
-				</form>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" class="email-textbox" id="email-textbox4">Nigel@gmail.com</textarea>
-			</div>
-			<div class="col-md-4">
-				<form id="team-type">
-					<button class="delete-button">Remove?</button>
-				</form>
-			</div>
-		</div>
-
 		<div class="row">
 			<div class="col-md-12">
 				<div id="invite-members">Invite Team Members</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox"></textarea>
-			</div>
-		</div>
+		<div id="invite-members-section">
+    		<div class="row">
+    			<div class="col-md-1"></div>
+    			<div class="col-md-2">
+    				Email:
+    			</div>
+    			<div class="col-md-4">
+    				<textarea rows="1" cols="50" id="email-textbox"></textarea>
+    			</div>
+    		</div>
+        </div>
 
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox"></textarea>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox"></textarea>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-2">
-				Email:
-			</div>
-			<div class="col-md-4">
-				<textarea rows="1" cols="50" id="email-textbox"></textarea>
-			</div>
-		</div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-secondary btn-lg btn-block" id="additional-invite">+</button>
+            </div>
+        </div>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -270,7 +183,7 @@
 		<div class="row">
 			<div class="col-md-2">
 				<button class="btn btn-warning" id="submit-button">Submit</button>
-				<button class="btn btn-warning"><a id="cancel-button" href="LajosIndex.html">Cancel</a></button>
+				<button class="btn btn-warning" id="cancel-button">Cancel</button>
 			</div>
 		</div>
 	</div>

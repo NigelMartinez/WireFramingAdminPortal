@@ -38,11 +38,11 @@
 					<h3 style="margin-right:10px" id="user-header">Logged in as<br>USERNAME</h3>
 				</div>
 			</div>
-			
+
 			<script language="javascript" type="text/javascript">
 				var username = sessionStorage.getItem("username");
 				var userHeader = document.getElementById("user-header");
-				
+
 				if(username == null) {
 					window.location.replace("forbidden.html");
 				}
@@ -192,8 +192,8 @@
 
 		<div class="row">
 			<div class="col-md-2">
-				<button class="btn btn-warning" id="submit-button">Submit</button>
-				<button class="btn btn-warning" id="cancel-button">Cancel</button>
+				<button class="btn btn-warning" id="submit-button">Save Changes</button>
+				<button class="btn btn-warning" id="cancel-button">Discard Changes</button>
 			</div>
 		</div>
 	</div>

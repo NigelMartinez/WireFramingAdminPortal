@@ -31,7 +31,6 @@ function populateTeamsArray() {
     			"team" : team
     		});
     	}
-    	alert("Finished in populateTeamsArray with length = " + teamsArray.length);
 	});
 };
 
@@ -82,7 +81,6 @@ function getTeamMemberObjects(teamId, callback) {
 	}
 
 	apiURL = 'http://131.104.49.63/api/participants/teamId/' + teamId;
-	alert(apiURL);
 	$.ajax ({
 			type : 'GET',
 			url : apiURL,
@@ -353,7 +351,6 @@ function addTeamClickEventListeners() {
                 document.getElementById("Team-" + i).addEventListener("click", function() {
                     var index = parseInt(this.id.split("-")[1]);
                     selectedTeamIndex = index;
-                    alert("Calling populateFormInformation with selected index of " + selectedTeamIndex);
                     populateFormInformation();
                 });
             }
@@ -467,7 +464,6 @@ function addTeamMemberLeaveEventListeners() {
             parId = idParts[idParts.length - 3];
             parTeamId = idParts[idParts.length - 2];
             index = parseInt(idParts[idParts.length - 1]);
-            alert("currentParticipantsArray.length = " + currentParticipantsArray.length + ", this.id = " + this.id + ", index = " + index);
 
             modifiedParticipantObject = {
                 "id" : currentParticipantsArray[index].id,
@@ -494,7 +490,6 @@ function addTeamMemberLeaveEventListeners() {
 
                 modifiedParticipantObject.email = this.value;
                 modifiedParticipantsData.parTeamId = { parId : modifiedParticipantObject };
-                alert(modifiedParticipantsData.parTeamId.parId.email);
             }
         });
 	}
@@ -526,7 +521,6 @@ function addRemoveParticipantButtonEventListeners() {
 
 			/* make a database call */
 			apiURL = getApiURL("participant", rmButton.id.toString().slice(7));
-			alert(apiURL);
 			$.ajax({
 				type : 'GET',
 				url : apiURL,
@@ -689,7 +683,6 @@ window.onload = function () {
 			for (var teamId in modifiedParticipantsData.keys) {
 			    for (var parId in modifiedParticipantsData.teamId) {
 			        apiURL = getApiURL('participant', parseInt(parId));
-			        alert(apiURL);
 			        $.ajax ({
 			           type : 'PUT',
                         url : apiURL,
